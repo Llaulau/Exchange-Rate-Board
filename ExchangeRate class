@@ -1,0 +1,52 @@
+class ExchangeRate {
+    let fromCurrency: String!
+    let toCurrency: String!
+    
+    let baseAmount: UInt!
+    var rate: Float! = 1
+    
+    init(from: String, to: String, base: UInt, rate: Float) {
+        fromCurrency = from
+        toCurrency = to
+        
+        baseAmount = base
+        self.rate = rate
+    }
+    
+    var description : String {
+        return ("\(baseAmount) \(fromCurrency) = \(rate) \(toCurrency)")
+    }
+}
+
+var exchangeRateTable: [ExchangeRate] = [ExchangeRate]()
+
+var chfToEuro: ExchangeRate = ExchangeRate(from: "CHF", to: "EURO", base: 1, rate: 1.15)
+var chfToUsd: ExchangeRate = ExchangeRate(from: "CHF", to: "USD", base: 1, rate: 0.98)
+var chfToGbp: ExchangeRate = ExchangeRate(from: "CHF", to: "GBP", base: 1, rate: 1.35)
+var euroToJpy: ExchangeRate = ExchangeRate(from: "EURO", to: "JPY", base: 1, rate: 1045)
+var euroToGbp: ExchangeRate = ExchangeRate(from: "EURO", to: "GBP", base: 1, rate: 1.25)
+var jpyToEuro: ExchangeRate = ExchangeRate(from: "JPY", to: "EURO", base: 1000, rate: 1.11)
+
+var exchangeRateTable2: [ExchangeRate] = [ExchangeRate]()
+
+var usdToChf: ExchangeRate = ExchangeRate(from: "USD", to: "CHF", base: 1, rate: 0.99)
+var gbpToChf: ExchangeRate = ExchangeRate(from: "CHF", to: "USD", base: 1, rate: 1.23)
+var chfToJpy: ExchangeRate = ExchangeRate(from: "CHF", to: "JPY", base: 1, rate: 108.61)
+
+exchangeRateTable.append(ExchangeRate(from: "CHF", to: "EURO", base: 1, rate: 1.15))
+
+exchangeRateTable.append(chfToEuro)
+exchangeRateTable.append(chfToUsd)
+exchangeRateTable.append(chfToGbp)
+exchangeRateTable.append(euroToJpy)
+exchangeRateTable.append(euroToGbp)
+exchangeRateTable.append(jpyToEuro)
+
+exchangeRateTable.append(usdToChf)
+exchangeRateTable.append(gbpToChf)
+exchangeRateTable.append(chfToJpy)
+
+for line in exchangeRateTable {
+    print(line.description)
+}
+
