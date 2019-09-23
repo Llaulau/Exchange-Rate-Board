@@ -1,0 +1,18 @@
+import UIKit
+
+var populationParCantons:[String:UInt] = [String:UInt]()
+
+populationParCantons["Geneve"] = 480000
+populationParCantons["Vaud"] = 800000
+populationParCantons["Valais"] = 341000
+populationParCantons["Neuchatel"] = 177000
+populationParCantons["Jura"] = 73000
+populationParCantons["Fribourg"] = 315000
+populationParCantons["Berne"] = 1000000
+populationParCantons["Zurich"] = 1500000
+populationParCantons["Bale"] = 200000
+populationParCantons["Tessin"] = 354000
+
+for (canton, population) in populationParCantons {
+    print("\(canton):\(population)")
+}
